@@ -1,4 +1,4 @@
-var PLAY = 1;
+ var PLAY = 1;
 var END = 0;
 var gameState = PLAY;
 
@@ -7,7 +7,7 @@ var ground, invisibleGround, groundImage;
 
 var cloudsGroup, cloudImage;
 var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obstacle6;
-
+var i;
 var score=0;
 
 var gameOver, restart;
@@ -17,7 +17,7 @@ localStorage["HighestScore"] = 0;
 function preload(){
   trex_running =   loadAnimation("trex1.png","trex3.png","trex4.png");
   trex_collided = loadAnimation("trex_collided.png");
-  
+  i=loadImage("48f453f5-9a05-4b50-bf29-86133c24d4ce.jpg");
   groundImage = loadImage("ground2.png");
   
   cloudImage = loadImage("cloud.png");
@@ -70,9 +70,11 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-  background(0);
+  background(i);
   text("Score: "+ score, 500,50);
-  
+  if(score > 250){
+    gameState=END
+  }
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
