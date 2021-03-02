@@ -17,7 +17,7 @@ localStorage["HighestScore"] = 0;
 function preload(){
   trex_running =   loadAnimation("trex1.png","trex3.png","trex4.png");
   trex_collided = loadAnimation("trex_collided.png");
-  i=loadImage("48f453f5-9a05-4b50-bf29-86133c24d4ce.jpg");
+  i=loadImage("48f453f5-9a05-4b50-bf29-86133c24d4ce.png");
   groundImage = loadImage("ground2.png");
   
   cloudImage = loadImage("cloud.png");
